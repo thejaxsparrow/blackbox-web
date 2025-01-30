@@ -1,0 +1,14 @@
+<div class="two-bands-wrapper">
+  <!-- Première bande orange, inclinée à +1.5° -->
+  <div class="second-band"></div>
+
+  <!-- Deuxième bande bleue, avec le marquee, inclinée à -1.5° -->
+  <div class="marquee-wrapper">
+    <div class="marquee-content">
+      <ng-container *ngFor="let keyword of keywords; let i = index">
+        <h1>{{ keyword }}</h1>
+        <img *ngIf="i < keywords.length - 1" [src]="starSrc" alt="Star">
+      </ng-container>
+    </div>
+  </div>
+</div>

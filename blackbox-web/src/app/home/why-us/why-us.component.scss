@@ -1,0 +1,84 @@
+.whyUsWrapper {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  overflow: hidden;
+  background: #fff;
+
+  /*
+    On utilise Flexbox pour centrer le contenu
+    à la fois horizontalement (align-items)
+    et verticalement (justify-content).
+  */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0;     /* Supprimez si besoin le margin-top précédent */
+  padding-top: 0;    /* Idem pour le padding-top */
+
+  .whyUsTitle {
+
+    font-size: 1.5rem;
+    text-align: center; /* Centre le titre */
+    font-family: 'gil-light', sans-serif;
+    color: var(--primary-color);
+
+  }
+  .whyUsSubTitle {
+    font-size: 4rem;
+    margin-bottom: 6rem;
+    font-family: 'gil-bold', sans-serif;
+  }
+}
+
+.whyUsContent {
+  display: flex;
+  justify-content: center; /* Centre horizontalement le groupe de cartes */
+  align-items: center;     /* (Optionnel) Centre verticalement les cartes si nécessaire */
+  gap: 2rem;               /* Espace entre les cartes (au lieu de margin-right) */
+
+  .whyUsCard {
+    width: 450px;
+    height: 550px;
+    padding: 3rem;
+    border-radius: 35px;
+    text-align: center;
+
+    .whyUsIcon {
+      width: 200px;     // Ajustez la taille selon votre préférence
+      height: auto;
+      margin-bottom: 2.5rem;
+
+    }
+
+    &:nth-child(1) {
+      background: #161616;
+      color: #fff;
+    }
+    &:nth-child(2) {
+      background: #F9F9F9;
+    }
+    &:nth-child(3) {
+      background: #0367fc;
+      color: #fff;
+    }
+    &:nth-child(4) {
+      background: #F9F9F9;
+    }
+    &:nth-child(5) {
+      background: #161616;
+      color: #fff;
+    }
+
+    h3 {
+      font-family: 'gil-bold', sans-serif;
+      font-size: 2.3rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      font-family: 'gil-medium', sans-serif;
+      font-size: 1.2rem;
+    }
+  }
+}
