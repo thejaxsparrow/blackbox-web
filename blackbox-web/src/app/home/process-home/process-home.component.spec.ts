@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { WhiteComponent } from './white.component';
+import { ProcessHomeComponent } from './process-home.component';
 
-describe('WhiteComponent', () => {
-  let component: WhiteComponent;
-  let fixture: ComponentFixture<WhiteComponent>;
+describe('ProcessHomeComponent', () => {
+  let component: ProcessHomeComponent;
+  let fixture: ComponentFixture<ProcessHomeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [WhiteComponent]
+      imports: [ProcessHomeComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(WhiteComponent);
+    fixture = TestBed.createComponent(ProcessHomeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

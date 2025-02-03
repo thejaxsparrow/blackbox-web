@@ -1,0 +1,57 @@
+<div class="our-mission-home">
+  <!-- SECTION 1 -->
+  <div class="mission-section section1" #section1>
+    <div class="section-left">
+      <div class="section-number">{{ sections[0].number }}</div>
+    </div>
+    <div class="section-center">
+      <h2 class="section-title">{{ sections[0].title }}</h2>
+    </div>
+    <div class="section-right">
+      <!-- Description au-dessus des points -->
+      <p class="section-description">
+        {{ sections[0].description }}
+      </p>
+      <!-- Liste de points -->
+      <p class="section-point" *ngFor="let point of sections[0].points">
+        • {{ point }}
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 2 -->
+  <div class="mission-section section2" #section2>
+    <div class="section-left">
+      <div class="section-number">{{ sections[1].number }}</div>
+    </div>
+    <div class="section-center">
+      <h2 class="section-title">{{ sections[1].title }}</h2>
+    </div>
+    <div class="section-right">
+      <p class="section-description">
+        {{ sections[1].description }}
+      </p>
+      <p class="section-point" *ngFor="let point of sections[1].points">
+        • {{ point }}
+      </p>
+    </div>
+  </div>
+
+  <!-- SECTION 3 -->
+  <div class="mission-section section3">
+    <div class="section-left">
+      <div class="section-number">{{ sections[2].number }}</div>
+    </div>
+    <div class="section-center">
+      <h2 class="section-title">{{ sections[2].title }}</h2>
+    </div>
+    <div class="section-right">
+      <p class="section-description">
+        {{ sections[2].description }}
+      </p>
+      <p class="section-point" *ngFor="let point of sections[2].points">
+        • {{ point }}
+      </p>
+    </div>
+  </div>
+</div>

@@ -1,18 +1,18 @@
-import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
-import { NgForOf, NgIf } from "@angular/common";
+import {Component, AfterViewInit, ElementRef, ViewChild} from '@angular/core';
+import {NgForOf, NgIf} from "@angular/common";
 
 @Component({
-  selector: 'app-marquee',
+  selector: 'app-marquee-end',
   standalone: true,
   imports: [
     NgForOf,
     NgIf
   ],
-  templateUrl: './marquee.component.html',
-  styleUrls: ['./marquee.component.scss']
+  templateUrl: './marquee-end.component.html',
+  styleUrl: './marquee-end.component.scss'
 })
-export class MarqueeComponent implements AfterViewInit {
-  @ViewChild('marqueeContent', { static: false }) marqueeContent!: ElementRef;
+export class MarqueeEndComponent implements AfterViewInit {
+  @ViewChild('marqueeEndContent', { static: false }) marqueeEndContent!: ElementRef;
 
   keywords = [
     'Performance',
@@ -28,7 +28,7 @@ export class MarqueeComponent implements AfterViewInit {
 
   dynamicKeywords: string[] = [];
 
-  starSrc = 'assets/home/images/star-marquee.svg';
+  starSrc = 'assets/home/images/star-marquee-end.svg';
 
   ngAfterViewInit() {
     this.generateInfiniteMarquee();

@@ -2,13 +2,14 @@ import { Component, AfterViewInit, ElementRef, ViewChild } from '@angular/core';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { NgForOf } from '@angular/common';
+import {GetStartedButtonComponent} from '../get-started-button/get-started-button.component';
 
 @Component({
   selector: 'app-why-us',
   templateUrl: './why-us.component.html',
   styleUrls: ['./why-us.component.scss'],
   standalone: true,
-  imports: [NgForOf]
+  imports: [NgForOf, GetStartedButtonComponent]
 })
 export class WhyUsComponent implements AfterViewInit {
   @ViewChild('whyUsWrapper', { static: true }) whyUsWrapper!: ElementRef<HTMLDivElement>;
@@ -43,7 +44,6 @@ export class WhyUsComponent implements AfterViewInit {
   ];
 
 
-
   constructor() {
     gsap.registerPlugin(ScrollTrigger);
   }
@@ -52,44 +52,39 @@ export class WhyUsComponent implements AfterViewInit {
     const wrapper = this.whyUsWrapper.nativeElement;
     const content = this.whyUsContent.nativeElement;
 
-    // 20% de la largeur de la fenêtre pour avoir un padding à gauche et à droite
-    const extraSpace = 0.2 * window.innerWidth;
 
-    // Position finale pour avoir 'extraSpace' sur la droite également
-    function getEndX(): number {
-      const totalWidth = content.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      // => ex: viewportWidth - totalWidth - extraSpace
-      return -((totalWidth - viewportWidth) + extraSpace);
+    console.log('Content offsetWidth:', content.offsetWidth);
+
+
+    function getScrollAmount(): number {
+      const styles = window.getComputedStyle(content);
+      const marginLeft = parseFloat(styles.marginLeft) || 0;
+      const marginRight = parseFloat(styles.marginRight) || 0;
+
+
+      const totalWidth = content.scrollWidth + marginLeft + marginRight;
+
+
+      return -(totalWidth - window.innerWidth);
     }
 
-    // Distance totale à parcourir (sert pour la durée du pin)
-    function getTotalDistance(): number {
-      const totalWidth = content.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      return (totalWidth - viewportWidth) + 2 * extraSpace;
-    }
+    const tween = gsap.to(content, {
+      x: getScrollAmount,
+      duration: 3,
+      ease: 'none'
+    });
 
-    // On anime de x = extraSpace (départ) à x = getEndX() (fin)
-    const tween = gsap.fromTo(
-      content,
-      { x: extraSpace },
-      {
-        x: getEndX,
-        duration: 3,
-        ease: 'none'
-      }
-    );
 
     ScrollTrigger.create({
       trigger: wrapper,
-      start: 'top 20%', // Ajustez si besoin
-      end: () => `+=${getTotalDistance()}`,
+      start: 'top 20%',
+
+      end: () => `+=${Math.abs(getScrollAmount())}`,
       pin: true,
       animation: tween,
       scrub: 1,
-      invalidateOnRefresh: true,
-      markers: true // À désactiver en prod
+      invalidateOnRefresh: false,
+      markers: true
     });
   }
 }

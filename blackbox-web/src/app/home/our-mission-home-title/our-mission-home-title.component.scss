@@ -1,0 +1,24 @@
+.mission-title {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-family: 'gil-bold', sans-serif;
+  padding-top: 10rem;
+  padding-bottom: 5rem;
+
+}
+h1 {
+  font-size: 4rem;
+  margin-bottom: 6rem;
+  font-family: 'gil-bold', sans-serif;
+  text-align: center;
+}
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'gil-light', sans-serif;
+  color: var(--primary-color);
+}

@@ -1,0 +1,27 @@
+<div class="servicesHome">
+
+
+  <p class="servicesHome-subtitle">Our Service</p>
+
+
+  <h2 class="servicesHome-title">
+    Solutions Tailored for
+    <br />
+    Growth and Excellence
+  </h2>
+
+
+  <div class="servicesHome-list">
+    <div class="servicesHome-item" *ngFor="let service of services">
+
+      <span class="servicesHome-item-text">
+        {{ service.name }}
+      </span>
+
+
+      <div class="servicesHome-item-arrow" [innerHTML]="arrowIconSafe"></div>
+
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,136 @@
+.process-home {
+  background-color: #121315;
+  color: white;
+  padding: 140px 0;
+  height: auto; // Ajustement pour éviter un 100vh inutile
+  font-family: 'gil-bold', sans-serif;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  margin-inline: 10px;
+  border-radius: 35px;
+  overflow: hidden; // Empêche le débordement
+  position: relative;
+
+
+  .container {
+    display: flex;
+    justify-content: flex-start;  // Alignement au début
+    align-items: flex-start;      // Alignement en haut
+    max-width: 80%;
+    margin: 0 auto;
+    gap: 4rem; // Ajout du gap de 4rem
+
+    .left {
+      flex: none;  // Taille automatique selon le contenu
+      max-width: 30%; // Optionnel pour éviter un trop grand titre
+
+      h3 {
+        font-size: 1.4rem;  // un peu plus grand
+        color: var(--primary-color);
+        text-transform: uppercase;
+        opacity: 0.8;
+        font-family: 'gil-light', sans-serif;
+      }
+
+      h1 {
+        font-size: 5.5rem;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+    }
+
+    .right {
+      flex: 1; // Prend tout l'espace restant
+      min-width: 0; // Pour éviter un dépassement
+      //margin-bottom: 9rem;
+
+      .step {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 3rem 0;
+        cursor: pointer;
+        transition: all 0.8s ease;
+
+        .step-header {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          transition: color 0.8s ease;
+
+          .step-number {
+            margin-top: -0.8rem;
+            font-size: 2.3rem;
+            color: #7a7a7a;
+            font-family: 'gil-medium', sans-serif;
+          }
+
+          .step-title {
+            flex-grow: 1;
+            font-size: 3.5rem;
+            color: #7a7a7a;
+            margin-left: 10px;
+          }
+
+          .icon-container {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.8s ease;
+
+            svg {
+              transition: transform 0.8s ease;
+            }
+          }
+        }
+
+        .step-content {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.8s ease, opacity 0.8s ease;
+          opacity: 0;
+          font-size: 2rem;
+          font-family: 'gil-medium', sans-serif;
+        }
+
+        &.active {
+          .step-header {
+            .step-title,
+            .step-number {
+              color: #FFF;
+            }
+          }
+
+          .icon-container {
+            background-color: var(--primary-color) !important;
+            transform: rotate(180deg);
+          }
+
+          .step-content {
+            max-height: 200px;
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .left {
+      text-align: center;
+      max-width: 100%; // Pour éviter que ça reste trop petit
+
+      h1 {
+        font-size: 36px;
+      }
+    }
+  }
+}

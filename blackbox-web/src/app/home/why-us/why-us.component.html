@@ -1,8 +1,12 @@
 <div class="whyUsWrapper" #whyUsWrapper>
 
   <h3 class="whyUsTitle">Why Us</h3>
+
   <h2 class="whyUsSubTitle">Long-Term Success Starts Here</h2>
+
+
   <div class="whyUsContent" #whyUsContent>
+
     <div class="whyUsCard" *ngFor="let card of cards">
 
       <img
@@ -12,7 +16,13 @@
       />
 
       <h3>{{ card.title }}</h3>
+
       <p>{{ card.description }}</p>
+
     </div>
+
+  </div>
+  <div class="button-container">
+  <app-get-started-button text="Get Started" padding="1.2rem 10rem"></app-get-started-button>
   </div>
 </div>
