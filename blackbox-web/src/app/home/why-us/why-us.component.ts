@@ -49,42 +49,35 @@ export class WhyUsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    const wrapper = this.whyUsWrapper.nativeElement;
-    const content = this.whyUsContent.nativeElement;
+    // Désactive l'animation si la fenêtre est plus petite que 1000px.
+    if (window.innerWidth >= 1000) {
+      const wrapper = this.whyUsWrapper.nativeElement;
+      const content = this.whyUsContent.nativeElement;
 
+      function getScrollAmount(): number {
+        const styles = window.getComputedStyle(content);
+        const marginLeft = parseFloat(styles.marginLeft) || 0;
+        const marginRight = parseFloat(styles.marginRight) || 0;
+        const totalWidth = content.scrollWidth + marginLeft + marginRight;
+        return -(totalWidth - window.innerWidth);
+      }
 
-    console.log('Content offsetWidth:', content.offsetWidth);
+      const tween = gsap.to(content, {
+        x: getScrollAmount,
+        duration: 3,
+        ease: 'none'
+      });
 
-
-    function getScrollAmount(): number {
-      const styles = window.getComputedStyle(content);
-      const marginLeft = parseFloat(styles.marginLeft) || 0;
-      const marginRight = parseFloat(styles.marginRight) || 0;
-
-
-      const totalWidth = content.scrollWidth + marginLeft + marginRight;
-
-
-      return -(totalWidth - window.innerWidth);
+      ScrollTrigger.create({
+        trigger: wrapper,
+        start: 'top 20%',
+        end: () => `+=${Math.abs(getScrollAmount())}`,
+        pin: true,
+        animation: tween,
+        scrub: 1,
+        invalidateOnRefresh: false,
+        markers: true
+      });
     }
-
-    const tween = gsap.to(content, {
-      x: getScrollAmount,
-      duration: 3,
-      ease: 'none'
-    });
-
-
-    ScrollTrigger.create({
-      trigger: wrapper,
-      start: 'top 20%',
-
-      end: () => `+=${Math.abs(getScrollAmount())}`,
-      pin: true,
-      animation: tween,
-      scrub: 1,
-      invalidateOnRefresh: false,
-      markers: true
-    });
   }
 }

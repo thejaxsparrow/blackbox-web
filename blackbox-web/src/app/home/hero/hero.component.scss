@@ -3,8 +3,6 @@
   display: flex;
   flex-direction: column;
   position: relative;
-
-
   background-color: #161616;
   background: #161616 url('/assets/home/images/image (2)-Photoroom.png') no-repeat center center;
   background-size: cover;
@@ -42,6 +40,7 @@
   margin-bottom: 1rem;
   font-family: 'gil-bold', sans-serif;
   background-color: transparent;
+  text-align: center;
 }
 
 .highlight {
@@ -101,4 +100,44 @@
   padding: 2rem 4rem;
   padding-bottom: 11rem;
   font-family: 'gil-light', sans-serif;
+}
+@media (max-width: 1820px) {
+  .hero-content h1 {
+    font-size: 7.5rem;
+  }
+}
+@media (max-width: 1400px) {
+  .hero-content h1 {
+    font-size: 5.5rem;
+  }
+  .subtitle {
+    font-size: 1.4rem;
+  }
+  .trusted-by {
+    font-size: 2rem;
+    padding-bottom: 5rem;
+  }
+}
+@media (max-width: 1025px) {
+  .hero-container {
+    padding: 1.5rem;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+  .subtitle {
+    font-size: 1rem;
+    max-width: 600px;
+  }
+  .trusted-by {
+    font-size: 2rem;
+    padding: 2rem 2rem;
+  }
+}
+@media (max-width: 800px) {
+  .btn {
+    padding: 0.75rem 2rem;
+    font-size: 0.7rem;
+  }
+
 }

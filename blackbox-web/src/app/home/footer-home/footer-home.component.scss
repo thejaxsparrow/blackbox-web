@@ -16,9 +16,9 @@
   .background-svg {
     position: absolute;
     top: 10%;
-    left: 40%;
+    left: 40% !important;
     transform: translateX(-50%);
-    width: 55vw;
+    width: 1600px;
     z-index: 1;
   }
 
@@ -29,10 +29,7 @@
     z-index: 2;
     font-family: 'gil-medium', sans-serif;
 
-    @media (max-width: 768px) {
-      flex-direction: column;
-      text-align: center;
-    }
+
 
     .contact-text {
       flex: 1;
@@ -82,6 +79,66 @@
         font-size: 1.4rem;
         padding: 1rem 2rem;
 
+      }
+    }
+  }
+}
+@media (max-width: 1500px) {
+  .footer-contact{
+    .background-svg {
+      position: absolute;
+      top: 10%;
+      left: 40% !important;
+      transform: translateX(-25%);
+      width: 1600px;
+      z-index: 1;
+    }
+  }
+
+
+}
+@media (max-width: 1400px) {
+  .footer-contact {
+    height: auto !important;
+    border-radius: 0;
+    margin-inline: 0;
+
+    .background-svg {
+      width: auto !important;
+    }
+
+    .contact-container {
+      flex-direction: column;
+      max-width: 100% !important;
+      width: 100% !important;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+
+      .contact-text {
+        padding: 2rem !important;
+        text-align: center;
+        color: white;
+
+
+        h2 {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1.4rem;
+        }
+      }
+
+      .contact-form {
+        width: 100% !important;
+        margin: 0 2rem !important;
+        padding: 2rem !important;
+        input,
+        textarea {
+          font-size: 1.2rem;
+        }
       }
     }
   }

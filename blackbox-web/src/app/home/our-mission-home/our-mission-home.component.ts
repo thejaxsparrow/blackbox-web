@@ -54,6 +54,11 @@ export class OurMissionHomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
+    // On désactive complètement l'animation en dessous de 768px
+    if (window.innerWidth < 768) {
+      return;
+    }
+
     this.setupScrollAnimations();
   }
 

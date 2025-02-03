@@ -3,7 +3,9 @@
     <div class="left">
       <h3>How It Works</h3>
       <h1>Transforming Complexity <br/> into Scalable<br/> and High-Performance Solutions</h1>
-      <app-get-started-button text="Get Started" padding="1.2rem 9rem"></app-get-started-button>
+      <div class="process-button">
+      <app-get-started-button text="Get Started" padding="1rem 7rem"></app-get-started-button>
+      </div>
     </div>
     <div class="right">
       <div
@@ -22,9 +24,11 @@
             </svg>
           </div>
         </div>
-        <div class="step-content" *ngIf="activeIndex === i">
+        <div class="step-content"
+             [class.active]="activeIndex === i">
           <p>{{ step.description }}</p>
         </div>
+
       </div>
     </div>
   </div>

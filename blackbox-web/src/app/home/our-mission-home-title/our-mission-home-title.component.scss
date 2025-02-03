@@ -22,3 +22,19 @@ h2 {
   font-family: 'gil-light', sans-serif;
   color: var(--primary-color);
 }
+@media (max-width: 768px) {
+  .mission-title {
+    position: static;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+}

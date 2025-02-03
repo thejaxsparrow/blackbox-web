@@ -90,3 +90,42 @@
     z-index: 6;
   }
 }
+@media (max-width: 768px) {
+  .our-mission-home {
+
+    .mission-section {
+      height: auto;
+
+      flex-direction: column;
+      align-items: flex-start;
+
+
+      .section-number {
+        display: none !important;
+      }
+
+      .section-left {
+        display: none !important;
+      }
+
+      .section-center,
+      .section-right {
+        width: 100% !important;
+        padding: 2rem !important;
+        max-width: 100%;
+      }
+
+      .section-title {
+        font-size: 2.5rem !important;
+      }
+
+      .section-description {
+        font-size: 1.6rem;
+      }
+
+      .section-point {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
