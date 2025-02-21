@@ -1,0 +1,86 @@
+<section class="contact-us-section">
+
+  <div class="contact-left">
+
+
+
+    <img
+      src="/assets/contact-us/images/whitelogo.svg"
+      alt="White Logo"
+      class="white-logo"
+    />
+
+
+    <div class="social-icons">
+      <a href="https://facebook.com" target="_blank">
+        <img src="/assets/icons/facebook-icon.svg" alt="Facebook" />
+      </a>
+      <a href="https://twitter.com" target="_blank">
+        <img src="/assets/icons/twitter-icon.svg" alt="Twitter" />
+      </a>
+      <a href="https://linkedin.com" target="_blank">
+        <img src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
+      </a>
+
+    </div>
+  </div>
+
+
+  <div class="contact-right">
+    <h1>Contact us</h1>
+    <p>Reach out and we’ll get in touch within 24 hours.</p>
+
+    <form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm)">
+
+      <div class="form-row">
+        <input
+          type="text"
+          name="firstName"
+          placeholder="First name"
+          ngModel
+        />
+        <input
+          type="text"
+          name="lastName"
+          placeholder="Last name"
+          ngModel
+        />
+      </div>
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email address"
+        ngModel
+      />
+
+
+      <select name="teamSize" ngModel>
+        <option value="1-50 people">1-50 people</option>
+        <option value="51-100 people">51-100 people</option>
+        <option value="100+ people">100+ people</option>
+      </select>
+
+
+      <select name="location" ngModel>
+        <option value="Canada">Canada</option>
+        <option value="USA">USA</option>
+        <option value="Other">Other</option>
+
+      </select>
+
+      <textarea name="message" placeholder="Leave us a message..." ngModel></textarea>
+
+      <label class="privacy-checkbox">
+        <input type="checkbox" name="privacyPolicy" ngModel />
+        You agree to our friendly
+        <a href="#" target="_blank">privacy policy</a>.
+      </label>
+
+      <button type="submit">Send message</button>
+    </form>
+
+
+
+  </div>
+</section>

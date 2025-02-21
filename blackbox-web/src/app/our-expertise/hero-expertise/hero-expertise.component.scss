@@ -1,0 +1,244 @@
+.hero-expertise-container {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 105vh;
+  background: var(--secondary-color);
+  color: #fff;
+  padding-top: 25%;
+
+  .left-col {
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .hero-text {
+      margin-bottom: 50%;
+      font-family: 'gil-medium', sans-serif;
+      font-size: 2rem;
+
+      h2 {
+        margin: 0 0 2% 0;
+        font-size: 6rem;
+        font-family: 'gil-bold', sans-serif;
+
+      }
+    }
+
+    .zone-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+
+      button {
+        border: 1px solid #fff;
+        background: transparent;
+        color: #fff;
+        padding: 0.5rem 2rem;
+        cursor: pointer;
+        white-space: nowrap;
+        font-family: 'gil-medium', sans-serif;
+        font-size: 1.4rem;
+
+        &.active {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .right-col {
+    width: 50%;
+    padding: 2rem;
+    margin-left: 50%;
+
+    .expertise-header{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .expertise-item {
+      border-bottom: 1px white solid;
+      padding: 1.5rem 1.5rem;
+      cursor: pointer;
+      font-family: 'gil-medium', sans-serif;
+      color: #fff;
+      background: transparent;
+
+      .expertise-header h3 {
+        font-family: 'gil-bold', sans-serif;
+        margin: 0;
+        font-size: 2.4rem;
+
+      }
+
+      .expertise-header .info-left span {
+        font-size: 1.4rem;
+        color: #aaa;
+      }
+
+      .toggle-sign {
+        font-size: 4rem;
+      }
+
+      .expertise-content {
+        margin-top: 1rem;
+
+        p {
+          margin-bottom: 2.2rem;
+          font-size: 1.4rem;
+        }
+
+        .expertise-tags {
+
+          span {
+
+            background: var(--primary-color);
+            padding: 0.8rem 1.2rem;
+            margin-right: 0.5rem;
+            font-size: 1rem;
+            font-family: 'gil-bold', sans-serif;
+            border-radius: 35px;
+          }
+        }
+      }
+
+
+      &.expanded,
+      &:hover {
+        background: #fff;
+        color: #000;
+        border-bottom: 1px white solid;
+
+
+        .expertise-header .info-left span {
+          color: #000;
+        }
+
+        .toggle-sign {
+          color: #000;
+        }
+
+        .expertise-content p {
+          color: #000;
+        }
+
+        .expertise-tags span {
+          background: #000;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .hero-expertise-container {
+    flex-direction: column !important;
+  }
+
+  .left-col {
+    position: relative !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+
+    .hero-text {
+      margin-bottom: 5% !important;
+
+
+      h2 {
+        margin: 0 0 2% 0;
+        font-size: 6rem;
+        font-family: 'gil-bold', sans-serif;
+
+      }
+    }
+  }
+
+  .right-col {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+}
+
+
+
+
+
+@media (max-width: 767px) {
+  .hero-expertise-container {
+    flex-direction: column;
+    padding-top: 25%;
+
+    .left-col {
+      display: none;
+    }
+
+    .right-col {
+      width: 100%;
+      margin-left: 0;
+      padding: 1rem;
+    }
+  }
+
+
+  .mobile-filter-button {
+    position: fixed;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 1.5rem);
+    box-sizing: border-box;
+    padding: 0.8rem 2rem;
+    background: #fff;
+    color: #000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    text-align: center;
+    font-family: 'gil-medium', sans-serif;
+  }
+
+
+  .mobile-filters-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-color);
+    color: #fff;
+    z-index: 9998;
+    padding: 1rem;
+    padding-bottom: 5rem;
+    box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.3);
+
+    &__content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      width: 100vw;
+
+      button {
+        flex: 0 0 45%;
+        background: transparent;
+        border: 1px solid #fff;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        text-align: center;
+        color: #fff;
+
+        &.active {
+          background: #fff;
+          color: #000;
+        }
+      }
+    }
+  }
+}

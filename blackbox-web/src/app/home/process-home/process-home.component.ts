@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgForOf, NgIf} from '@angular/common';
+import {NgForOf} from '@angular/common';
 import {GetStartedButtonComponent} from "../get-started-button/get-started-button.component";
 import gsap from "gsap";
 
@@ -7,7 +7,7 @@ import gsap from "gsap";
   selector: 'app-process-home',
   templateUrl: './process-home.component.html',
     imports: [
-        NgIf,
+
         NgForOf,
         GetStartedButtonComponent
     ],

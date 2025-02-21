@@ -81,7 +81,7 @@
             justify-content: center;
             border-radius: 50%;
             transition: all 0.8s ease;
-
+            aspect-ratio: 1 / 1 !important;
             svg {
               transition: transform 0.8s ease;
             }
@@ -155,25 +155,25 @@
 
   }
 
-  /* ---------------- MEDIA QUERY : MOBILE ---------------- */
+
   @media (max-width: 768px) {
-    /* 1) Supprime margin-inline et border-radius sur mobile */
+
     margin-inline: 0 !important;
     border-radius: 0 !important;
     padding: 2rem;
 
     .container {
-      /* 2) La largeur prend 100%, et bascule en colonne */
+
       max-width: 100% !important;
       flex-direction: column;
-      gap: 2rem; /* Ajustez si besoin */
+      gap: 2rem;
 
       .left {
-        /* On garde l'alignement à gauche sur mobile */
+
         text-align: left !important;
         max-width: 100%;
 
-        /* Typo plus petite */
+
         h3 {
           font-size: 0.9rem;
         }
@@ -183,7 +183,8 @@
       }
 
       .right {
-        width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
 
         .step {
           padding: 2rem 0;
@@ -196,8 +197,13 @@
               font-size: 1.8rem;
             }
           }
+          .icon-container {
+            width: 25px !important;
+            height: 25px  !important;
+          }
           .step-content {
             font-size: 1.4rem;
+            max-width: 95% !important;
           }
         }
       }

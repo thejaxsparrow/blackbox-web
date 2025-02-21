@@ -1,0 +1,76 @@
+<div class="service-detail" *ngIf="service">
+  <div class="service-left">
+    <div class="service-info">
+      <span class="service-id">{{ service.id }}</span> /
+      <span class="service-name">{{ service.name }}</span>
+    </div>
+    <h1 class="service-title">{{ service.shortName }}</h1>
+  </div>
+  <div class="service-right">
+    <img [src]="service.image" [alt]="service.name" class="service-image">
+  </div>
+</div>
+
+
+<app-spacer bgColor="var(--secondary-color)"></app-spacer>
+<app-white-marquee></app-white-marquee>
+
+
+
+<div class="service-description" *ngIf="service">
+
+  <div class="description-main">
+    <h2 class="description-title">{{ service.detailedDescriptionTitle }}</h2>
+    <p class="description-text">{{ service.detailedDescription }}</p>
+  </div>
+
+
+  <div class="description-columns">
+
+    <div class="column left-column">
+      <button class="action-button">Learn More</button>
+    </div>
+
+    <div class="column right-column">
+      <p class="secondary-text">{{ service.secondaryDescription }}</p>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="service-content">
+
+  <div class="included-services-header" >
+    <div class="included-services-title">INCLUDED SERVICES</div>
+    <div class="included-services-count">({{ service?.includedServices?.length }})</div>
+  </div>
+
+
+<div class="included-services" *ngIf="service">
+
+
+
+  <div class="service-card" *ngFor="let card of service.includedServices; let i = index">
+    <div class="card-header">
+      <span class="card-number">{{ i + 1 | number:'3.0-0' }}</span>
+      <span class="card-icon"></span>
+    </div>
+
+    <div class="card-content">
+      <h3 class="card-title">{{ card.title }}</h3>
+      <p class="card-description">{{ card.description }}</p>
+    </div>
+  </div>
+</div>
+
+  <app-scroll-test></app-scroll-test>
+
+  <app-drive-systems-section></app-drive-systems-section>
+</div>
+
+
+
+
+<app-footer-home></app-footer-home>
+

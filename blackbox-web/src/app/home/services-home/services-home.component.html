@@ -13,6 +13,8 @@
 
   <div class="servicesHome-list">
     <div class="servicesHome-item" *ngFor="let service of services">
+      <a class="servicesHome-item-link"  [routerLink]="['/services', service.slug]">
+
 
       <span class="servicesHome-item-text">
         {{ service.name }}
@@ -20,7 +22,7 @@
 
 
       <div class="servicesHome-item-arrow" [innerHTML]="arrowIconSafe"></div>
-
+      </a>
     </div>
   </div>
 

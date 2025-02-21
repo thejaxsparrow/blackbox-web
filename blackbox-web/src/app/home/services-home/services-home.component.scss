@@ -74,9 +74,10 @@
     color: #aaa;
     transition: background-color 0.8s, transform 0.8s, color 0.8s;
     fill: black;
+    aspect-ratio: 1 / 1 !important;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .servicesHome {
     padding: 2rem 1rem;
 
@@ -134,4 +135,10 @@
     }
   }
 }
-
+.servicesHome-item-link {
+  text-decoration: none;
+  color: inherit;
+  background: transparent;
+  border: none;
+  display: contents;
+}

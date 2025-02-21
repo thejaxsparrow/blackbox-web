@@ -1,0 +1,70 @@
+<div class="hero-expertise-container" >
+    <div class="left-col" #leftCol [ngStyle]="leftColStyle">
+        <div class="hero-text" *ngIf="!isMobile">
+      <h2>{{ heroData.title }}</h2>
+      <p>{{ heroData.subtitle }}</p>
+    </div>
+
+        <div class="zone-filters">
+      <button
+        *ngFor="let filter of filters"
+        [class.active]="filter === selectedFilter"
+        (click)="setFilter(filter)"
+      >
+        {{ filter }}
+      </button>
+    </div>
+  </div>
+
+    <div class="right-col">
+    <div
+      class="expertise-item"
+      *ngFor="let exp of filteredExpertises"
+      [class.expanded]="exp.expanded"
+      (click)="toggleExpand(exp)"
+    >
+      <div class="expertise-header" >
+        <div class="info-left">
+          <h3>{{ exp.name }}</h3>
+          <span>{{ exp.type }}</span>
+        </div>
+        <div class="toggle-sign">
+          {{ exp.expanded ? '–' : '+' }}
+        </div>
+      </div>
+
+      <div class="expertise-content" *ngIf="exp.expanded">
+        <p>{{ exp.description }}</p>
+        <div class="expertise-tags">
+          <span *ngFor="let t of exp.tags">{{ t }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+      <div
+    class="mobile-filter-button"
+    *ngIf="isMobile && showMobileFilterButton"
+    [ngStyle]="mobileButtonStyle"
+    (click)="toggleMobileFilters()"
+  >
+    <span *ngIf="!showMobileFilters">Filters</span>
+    <span *ngIf="showMobileFilters">Close</span>
+  </div>
+
+
+    <div
+    class="mobile-filters-panel"
+    *ngIf="isMobile && showMobileFilters"
+  >
+    <div class="mobile-filters-panel__content">
+      <button
+        *ngFor="let filter of filters"
+        [class.active]="filter === selectedFilter"
+        (click)="selectMobileFilter(filter)"
+      >
+        {{ filter }}
+      </button>
+    </div>
+  </div>
+</div>

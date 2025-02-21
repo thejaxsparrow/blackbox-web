@@ -10,10 +10,10 @@ import {NgStyle} from '@angular/common';
   styleUrl: './get-started-button.component.scss'
 })
 export class GetStartedButtonComponent {
-  @Input() text: string = 'Click Me'; // Texte du bouton
-  @Input() type: 'primary' | 'secondary' = 'primary'; // Style du bouton
-  @Input() disabled: boolean = false; // Désactiver le bouton
-  @Input() icon?: string; // Icône optionnelle
+  @Input() text: string = 'Click Me';
+  @Input() type: 'primary' | 'secondary' = 'primary';
+  @Input() disabled: boolean = false;
+  @Input() icon?: string;
   @Input() padding: string = '0.75rem 2rem';
 }
 

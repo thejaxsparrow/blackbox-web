@@ -1,12 +1,17 @@
 import { Component } from '@angular/core';
 import {NgForOf} from '@angular/common';
 import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
+import {RouterLink} from '@angular/router';
+import { generateServiceId } from '@shared/utils';
+
+
 
 @Component({
   selector: 'app-services-home',
   templateUrl: './services-home.component.html',
   imports: [
-    NgForOf
+    NgForOf,
+    RouterLink
   ],
   styleUrls: ['./services-home.component.scss']
 })
@@ -37,9 +42,16 @@ export class ServicesHomeComponent {
 
   // Liste des services
   services = [
-    {name: 'Refinement of Existing Systems'},
-    {name: 'System Design and Architecture'},
-    {name: 'Software Performance Optimization'},
-    {name: 'Cloud Migration & Infrastructure Scaling'},
+    { name: 'Refinement of Existing Systems', slug: 'refinement-of-existing-systems' },
+    { name: 'System Design and Architecture', slug: 'system-design-and-architecture' },
+    { name: 'Software Performance Optimization', slug: 'software-performance-optimization' },
+    { name: 'Cloud Migration & Infrastructure Scaling', slug: 'cloud-migration-infrastructure-scaling' }
   ];
+
+
+  getServiceId(service: any): string {
+    return generateServiceId(service);
+  }
+
+  protected readonly generateServiceId = generateServiceId;
 }

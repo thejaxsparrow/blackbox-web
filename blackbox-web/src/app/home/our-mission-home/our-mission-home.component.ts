@@ -15,7 +15,7 @@ export class OurMissionHomeComponent implements AfterViewInit {
   @ViewChild('section1', { static: true }) section1!: ElementRef<HTMLDivElement>;
   @ViewChild('section2', { static: true }) section2!: ElementRef<HTMLDivElement>;
 
-  // -- NOUVEAU : Contenu géré en TS --
+
   sections = [
     {
       number: '01',
@@ -54,7 +54,7 @@ export class OurMissionHomeComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // On désactive complètement l'animation en dessous de 768px
+
     if (window.innerWidth < 768) {
       return;
     }
@@ -63,7 +63,6 @@ export class OurMissionHomeComponent implements AfterViewInit {
   }
 
   setupScrollAnimations(): void {
-    // On ne modifie pas votre logique actuelle de pin
     const sections = [this.section1, this.section2];
     sections.forEach((section) => {
       ScrollTrigger.create({
@@ -75,7 +74,7 @@ export class OurMissionHomeComponent implements AfterViewInit {
         onEnter: () =>
           gsap.to(section.nativeElement, {
             backgroundColor: '#E4E4E4',
-            duration: 0.5,
+            duration: 0.2,
           }),
         onLeaveBack: () =>
           gsap.to(section.nativeElement, {

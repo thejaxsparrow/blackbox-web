@@ -90,7 +90,48 @@
     z-index: 6;
   }
 }
-@media (max-width: 768px) {
+
+
+@media (max-width: 2000px) {
+  .our-mission-home {
+    .mission-section {
+      .section-title {
+        font-size: 2.5rem;
+      }
+      .section-description {
+        font-size: 1.4rem;
+      }
+      .section-point {
+        font-size: 1.4rem;
+      }
+      .section-number {
+        font-size: 10rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .our-mission-home {
+    .mission-section {
+      .section-title {
+        font-size: 2rem;
+      }
+      .section-description {
+        font-size: 1rem;
+      }
+      .section-point {
+        font-size: 1.3rem;
+      }
+      .section-number {
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1250px) {
   .our-mission-home {
 
     .mission-section {

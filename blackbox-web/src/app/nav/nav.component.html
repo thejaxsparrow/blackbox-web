@@ -1,0 +1,62 @@
+<nav [ngClass]="{'scrolled': scrolled, 'hidden': !showNavbar}">
+  <div class="nav-container">
+
+
+    <div class="logo">
+      <a routerLink="/" (click)="isMenuOpen = false">
+        <img src="/assets/navbar/images/logoblue.svg" alt="Logo" class="logo-img">
+      </a>
+    </div>
+
+
+
+    <ul class="nav-links" [class.open]="isMenuOpen">
+
+      <li>
+        <a routerLink="/" (click)="isMenuOpen = false">Home</a>
+      </li>
+
+
+      <li class="dropdown" [ngClass]="{'open': dropdownOpen}">
+        <a href="javascript:void(0)" (click)="toggleDropdown()">
+          Services <span class="dropdown-icon">{{ dropdownOpen ? '-' : '+' }}</span>
+        </a>
+        <ul class="dropdown-menu" *ngIf="dropdownOpen">
+          <li *ngFor="let service of services">
+            <a [routerLink]="['/services', service.slug]" (click)="closeDropdown()">
+              {{ service.name }}
+            </a>
+          </li>
+        </ul>
+      </li>
+
+
+      <li>
+        <a routerLink="/our-expertise" (click)="isMenuOpen = false">Our Expertise</a>
+      </li>
+
+
+
+      <li>
+      <a class="howItWorks" (click)="goToHowItWorks(); isMenuOpen = false">
+        How It Works
+      </a>
+    </li>
+
+
+
+
+
+      <li class="cta">
+        <a routerLink="/contact-us" (click)="isMenuOpen = false">Contact Us</a>
+      </li>
+    </ul>
+
+
+    <div class="burger" [ngClass]="{'open': isMenuOpen}" (click)="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</nav>

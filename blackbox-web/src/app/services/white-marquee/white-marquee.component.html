@@ -1,0 +1,14 @@
+<div class="two-bands-wrapper">
+
+  <div class="second-band"></div>
+
+
+  <div class="marquee-wrapper">
+    <div #marqueeContent class="marquee-content">
+      <div class="marquee-item" *ngFor="let keyword of dynamicKeywords; let i = index">
+        <h1>{{ keyword }}</h1>
+        <img *ngIf="i < dynamicKeywords.length - 1" [src]="starSrc" alt="Star">
+      </div>
+    </div>
+  </div>
+</div>

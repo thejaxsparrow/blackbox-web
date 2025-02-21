@@ -20,7 +20,7 @@ export class OurMissionHomeTitleComponent implements AfterViewInit {
 
   setupStickyAnimation(): void {
     gsap.to(this.missionTitle.nativeElement, {
-      backgroundColor: "#E4E4E4", // Couleur de fond une fois le scroll activé
+      backgroundColor: "#E4E4E4",
       scrollTrigger: {
         trigger: this.missionTitle.nativeElement,
         start: "top top",
@@ -32,7 +32,7 @@ export class OurMissionHomeTitleComponent implements AfterViewInit {
     });
 
     gsap.to(this.missionTitle.nativeElement, {
-      backgroundColor: "white", // Retour à la couleur de base en revenant en haut
+      backgroundColor: "white",
       scrollTrigger: {
         trigger: this.missionTitle.nativeElement,
         start: "top 10%",

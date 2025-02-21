@@ -1,0 +1,78 @@
+<div class="navbar" [class.open]="isMenuOpen">
+
+  <div class="navbar-clip">
+
+    <div class="navbar-header">
+      <div class="navbar-logo">
+        <img src="/assets/navbar/images/black-logo.svg" alt="Logo">
+      </div>
+      <div class="company-name">BLACK BOX<br>SYSTEMS</div>
+
+      <button class="burger-btn" (click)="toggleMenu()">
+        <span class="bar top-bar"></span>
+        <span class="bar middle-bar"></span>
+        <span class="bar bottom-bar"></span>
+      </button>
+    </div>
+
+
+    <div class="menu-content">
+      <ul class="menu-list">
+        <li>
+          <div class="menu-item" (click)="toggleServices()">
+            <span class="menu-index">01</span>
+            <span>Services</span>
+            <span class="menu-plus">{{ showServices ? '-' : '+' }}</span>
+          </div>
+          <ul class="submenu" [class.show]="showServices">
+            <li *ngFor="let service of services">
+              <a (click)="navigateToService(service.slug)">
+                <span class="service-id">{{ service.id }}</span>&nbsp;&nbsp; <span class="service-name"> {{ service.name }}</span>
+              </a>
+            </li>
+          </ul>
+
+        </li>
+        <li>
+          <div class="menu-item">
+            <span class="menu-index">02</span>
+            <span>Our Mission</span>
+          </div>
+        </li>
+        <li>
+          <div class="menu-item">
+            <span class="menu-index">03</span>
+            <span>Expertise</span>
+          </div>
+        </li>
+        <li>
+          <div class="menu-item">
+            <span class="menu-index">04</span>
+            <span>Contact</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section Rouge -->
+    <div class="red-section">
+      <div class="contact-us">CONTACT <br> US</div>
+      <div class="talk-btn">LET'S TALK</div>
+      <svg class="arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 38 39">
+        <path d="M36.294 19.5 18.176 1.354l.706-.708L37.707 19.5 18.882 38.354l-.706-.708z"/>
+        <path d="M0 18.972h36.942v1H0z"/>
+      </svg>
+
+    </div>
+  </div>
+
+
+  <svg class="svg-header-footer"
+       viewBox="0 0 459 14"
+       preserveAspectRatio="none"
+       focusable="false" aria-hidden="true">
+    <path fill-rule="evenodd"
+          d="M119 13.5H11.988L0 1.094V0h459v13.5H221v-3a4 4 0 0 0-4-4h-94a4 4 0 0 0-4 4v3Z"/>
+  </svg>
+</div>
+<div class="blur-overlay"></div>

@@ -8,7 +8,7 @@ import {FooterHomeComponent} from '../footer-home/footer-home.component';
 import {OurMissionHomeComponent} from '../our-mission-home/our-mission-home.component';
 import {MarqueeEndComponent} from '../marquee-end/marquee-end.component';
 import {OurMissionHomeTitleComponent} from '../our-mission-home-title/our-mission-home-title.component';
-import {SpacerComponent} from '../../spacer/spacer.component';
+import {SpacerComponent} from '../spacer/spacer.component';
 
 @Component({
   selector: 'app-home',

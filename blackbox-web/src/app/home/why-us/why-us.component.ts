@@ -49,7 +49,7 @@ export class WhyUsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    // Désactive l'animation si la fenêtre est plus petite que 1000px.
+
     if (window.innerWidth >= 1000) {
       const wrapper = this.whyUsWrapper.nativeElement;
       const content = this.whyUsContent.nativeElement;

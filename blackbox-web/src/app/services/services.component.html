@@ -1,0 +1,11 @@
+<header>
+  <nav>
+    <ul>
+      <li *ngFor="let service of services">
+        <a [routerLink]="['/', service.slug]">
+          {{ service.name }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</header>

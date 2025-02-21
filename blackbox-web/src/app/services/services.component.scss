@@ -1,0 +1,22 @@
+header {
+  background: #222;
+  color: white;
+  padding: 1rem;
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+
+    li a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    li a:hover {
+      color: #f04;
+    }
+  }
+}
